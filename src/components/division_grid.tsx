@@ -26,7 +26,7 @@ export function DivisionGrid({ dividend, divisor }: DivisionGridProps) {
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
         let content = '';
-        let className = 'w-8 h-8 sm:w-10 sm:h-10 border border-gray-300 flex items-center justify-center text-lg sm:text-xl font-semibold';
+        let className = 'w-8 h-8 sm:w-10 sm:h-10 print:w-[1.2cm] print:h-[1.2cm] border border-gray-300 flex items-center justify-center text-lg sm:text-xl print:text-[11pt] font-semibold';
         
         // Row 0: Position labels (T, H, Z, E)
         if (row === 0) {
@@ -34,13 +34,13 @@ export function DivisionGrid({ dividend, divisor }: DivisionGridProps) {
           if (col >= dividendStartCol && col < dividendStartCol + dividendLength) {
             const posIndex = 4 - dividendLength + (col - dividendStartCol);
             content = positions[posIndex] || '';
-            className += ' text-xs text-gray-500';
+            className += ' text-xs text-gray-500 print:text-[8pt]';
           }
           // Labels above result (4 positions)
           else if (col >= resultStartCol && col < resultStartCol + 4) {
             const posIndex = col - resultStartCol;
             content = positions[posIndex] || '';
-            className += ' text-xs text-gray-500';
+            className += ' text-xs text-gray-500 print:text-[8pt]';
           }
           else {
             className += ' bg-gray-50';
