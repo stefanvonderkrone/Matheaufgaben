@@ -26,7 +26,7 @@ export function DivisionGrid({ dividend, divisor }: DivisionGridProps) {
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
         let content = '';
-        let className = 'w-6 h-6 sm:w-8 sm:h-8 border border-gray-400 flex items-center justify-center text-base sm:text-lg font-semibold';
+        let className = 'w-8 h-8 sm:w-10 sm:h-10 border border-gray-300 flex items-center justify-center text-lg sm:text-xl font-semibold';
         
         // Row 0: Position labels (T, H, Z, E)
         if (row === 0) {
@@ -58,7 +58,7 @@ export function DivisionGrid({ dividend, divisor }: DivisionGridProps) {
           } else if (col === dividendStartCol + dividendLength) {
             // Division operator
             content = '÷';
-            className += ' border-r border-gray-400';
+            className += ' border-r border-gray-300';
           } else if (col === dividendStartCol + dividendLength + 1) {
             // Divisor
             content = divisor.toString();
@@ -72,12 +72,25 @@ export function DivisionGrid({ dividend, divisor }: DivisionGridProps) {
             className += ' bg-gray-50';
           }
         }
-        // Rows 2+: Empty for calculation
+        // Row 2: Minus sign and calculation helper
+        else if (row === 2) {
+          if (col === 0) {
+            // First cell: minus sign with black bottom border
+            content = '-';
+            className += ' border-b-2 border-b-black';
+          } else if (col === 1) {
+            // Second cell: black bottom border
+            className += ' border-b-2 border-b-black';
+          } else if (col === dividendStartCol + dividendLength) {
+            className += ' border-r border-gray-300';
+          }
+        }
+        // Rows 3+: Empty for calculation
         else {
           if (col === 0) {
             className += ' bg-gray-50';
           } else if (col === dividendStartCol + dividendLength) {
-            className += ' border-r border-gray-400';
+            className += ' border-r border-gray-300';
           }
         }
         
