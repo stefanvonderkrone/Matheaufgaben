@@ -58,7 +58,7 @@ export function DivisionGrid({ dividend, divisor }: DivisionGridProps) {
           } else if (col === dividendStartCol + dividendLength) {
             // Division operator
             content = '÷';
-            className += ' border-r-2 border-r-gray-600';
+            className += ' border-r border-gray-400';
           } else if (col === dividendStartCol + dividendLength + 1) {
             // Divisor
             content = divisor.toString();
@@ -77,7 +77,7 @@ export function DivisionGrid({ dividend, divisor }: DivisionGridProps) {
           if (col === 0) {
             className += ' bg-gray-50';
           } else if (col === dividendStartCol + dividendLength) {
-            className += ' border-r-2 border-r-gray-600';
+            className += ' border-r border-gray-400';
           }
         }
         
