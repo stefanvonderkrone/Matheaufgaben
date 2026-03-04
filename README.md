@@ -1,73 +1,92 @@
-# React + TypeScript + Vite
+# Math Practice Worksheets
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Vite + React + TypeScript SPA for generating printable math worksheets.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Schriftliche Division** (Long Division): Generate worksheets with 3-4 digit dividends and 1-digit divisors
+- **Seed-based generation**: Use URL parameters to create reproducible worksheets
+- **Print-friendly**: Optimized CSS for printing on A4 paper
+- **Responsive design**: Works on desktop and mobile devices
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Development
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open http://localhost:5173/
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Build for Production
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+The `dist/` folder will contain the static files ready for deployment.
+
+## Usage
+
+### Index Page
+Navigate to `/` to see all available worksheet types.
+
+### Division Worksheet
+Navigate to `/division` to generate a random division worksheet.
+
+### Reproducible Worksheets
+Add a seed parameter to get the same worksheet every time:
+```
+/division?seed=12345
+```
+
+This is useful for:
+- Sharing specific worksheets with students
+- Creating answer keys
+- Re-printing lost worksheets
+
+## Configuration
+
+Edit `src/config/math_config.ts` to adjust:
+- Number of problems per page
+- Number ranges for dividends and divisors
+
+## Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── division_problem.tsx      # Single problem grid
+│   └── division_worksheet.tsx    # Problems grid layout
+├── config/              # Configuration files
+│   ├── math_config.ts            # Global settings
+│   └── problem_types.ts          # TypeScript interfaces
+├── pages/               # Page components
+│   ├── index_page.tsx            # Overview page
+│   └── division_page.tsx         # Division worksheet page
+├── utils/               # Utility functions
+│   ├── division_generator.ts     # Problem generation logic
+│   └── random_generator.ts       # Seeded random numbers
+├── app.tsx              # Router setup
+├── main.tsx             # Entry point
+└── index.css            # Global styles + print CSS
+```
+
+## Technology Stack
+
+- **Vite**: Build tool and dev server
+- **React 19**: UI library
+- **TypeScript**: Type safety
+- **React Router**: Client-side navigation (SPA mode)
+- **Tailwind CSS**: Utility-first styling
+
+## Future Extensions
+
+The architecture supports easy addition of new problem types:
+- Addition
+- Multiplication
+- Subtraction
+
+Simply implement the `MathProblem` interface and create a new generator.
