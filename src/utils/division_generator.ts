@@ -1,5 +1,5 @@
 import { SeededRandom } from './random_generator';
-import { DivisionProblem } from '../config/problem_types';
+import type { DivisionProblem } from '../config/problem_types';
 import { divisionConfig } from '../config/math_config';
 
 export function generateDivisionProblems(

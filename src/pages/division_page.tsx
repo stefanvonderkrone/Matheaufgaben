@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { DivisionProblem } from '../config/problem_types';
+import type { DivisionProblem } from '../config/problem_types';
 import { defaultConfig } from '../config/math_config';
 import { getSeedFromUrl } from '../utils/random_generator';
 import { generateDivisionProblems } from '../utils/division_generator';

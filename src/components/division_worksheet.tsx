@@ -1,4 +1,4 @@
-import { DivisionProblem } from '../config/problem_types';
+import type { DivisionProblem } from '../config/problem_types';
 import { DivisionProblemComponent } from './division_problem';
 
 interface DivisionWorksheetProps {
