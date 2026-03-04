@@ -17,7 +17,7 @@ export function DivisionGrid({ dividend, divisor }: DivisionGridProps) {
   // Calculate positions for dividend and result labels
   const dividendStartCol = 1; // Column 2 (0-indexed: 1)
   const dividendLength = dividendStr.length;
-  const resultStartCol = is4Digit ? 9 : 7; // Position for result field
+  const resultStartCol = is4Digit ? 8 : 7; // Position for result field
   
   // Generate grid cells
   const generateCells = () => {
