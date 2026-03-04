@@ -13,7 +13,10 @@ export function DivisionWorksheet({ problems }: DivisionWorksheetProps) {
   return (
     <div className={`grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 p-2 sm:p-4 ${printClass}`}>
       {problems.map((problem) => (
-        <div key={problem.id} className="flex justify-center overflow-x-auto">
+        <div 
+          key={problem.id} 
+          className={`flex overflow-x-auto ${has4DigitDividends ? 'justify-center' : 'justify-start'}`}
+        >
           <DivisionProblemComponent problem={problem} />
         </div>
       ))}
