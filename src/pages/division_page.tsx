@@ -1,35 +1,25 @@
-import { useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
-import type { DivisionProblem } from '../config/problem_types';
+import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { defaultConfig } from '../config/math_config';
 import { getSeedFromUrl } from '../utils/random_generator';
 import { generateDivisionProblems } from '../utils/division_generator';
 import { DivisionWorksheet } from '../components/division_worksheet';
 
 export function DivisionPage() {
-  const [searchParams] = useSearchParams();
-  const [problems, setProblems] = useState<DivisionProblem[]>([]);
-  const [seed, setSeed] = useState<number>(0);
-  const [currentUrl, setCurrentUrl] = useState<string>('');
+  // Get seed from URL or generate new one
+  const seed = useMemo(() => {
+    return getSeedFromUrl();
+  }, []);
   
-  useEffect(() => {
-    const seedValue = getSeedFromUrl();
-    setSeed(seedValue);
-    
-    const generatedProblems = generateDivisionProblems(
+  // Generate problems based on seed
+  const problems = useMemo(() => {
+    return generateDivisionProblems(
       defaultConfig.problemsPerPage,
-      seedValue
+      seed
     );
-    setProblems(generatedProblems);
-    
-    // Update URL with seed if not present
-    if (!searchParams.has('seed')) {
-      const newUrl = `${window.location.pathname}?seed=${seedValue}`;
-      window.history.replaceState({}, '', newUrl);
-    }
-    
-    setCurrentUrl(window.location.href);
-  }, [searchParams]);
+  }, [seed]);
+  
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
   
   const handleNewSeed = () => {
     const newSeed = Math.floor(Math.random() * 1000000);
