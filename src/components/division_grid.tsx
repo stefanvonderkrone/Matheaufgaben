@@ -26,7 +26,7 @@ export function DivisionGrid({ dividend, divisor }: DivisionGridProps) {
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
         let content = '';
-        let className = 'w-8 h-8 border border-gray-400 flex items-center justify-center text-lg font-semibold';
+        let className = 'w-6 h-6 sm:w-8 sm:h-8 border border-gray-400 flex items-center justify-center text-base sm:text-lg font-semibold';
         
         // Row 0: Position labels (T, H, Z, E)
         if (row === 0) {
