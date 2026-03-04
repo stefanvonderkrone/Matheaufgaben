@@ -107,7 +107,7 @@ export function DivisionGrid({ dividend, divisor }: DivisionGridProps) {
   
   return (
     <div 
-      className="print-break-inside-avoid inline-block border-2 border-gray-600"
+      className="print-break-inside-avoid inline-block border border-gray-300"
       style={{
         display: 'grid',
         gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
