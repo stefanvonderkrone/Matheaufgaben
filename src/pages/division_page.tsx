@@ -1,10 +1,12 @@
-import { useMemo } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useMemo, useState } from 'react';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { defaultConfig } from '../config/math_config';
 import { generateDivisionProblems } from '../utils/division_generator';
 import { DivisionWorksheet } from '../components/division_worksheet';
 
 export function DivisionPage() {
+  const navigate = useNavigate();
+  
   // Get seed from URL or generate new one
   const [searchParams] = useSearchParams();
   const seed = useMemo(() => {
@@ -18,6 +20,9 @@ export function DivisionPage() {
     return 12345;
   }, [searchParams]);
   
+  // State for manual seed input
+  const [manualSeed, setManualSeed] = useState(seed.toString());
+  
   // Generate problems based on seed
   const problems = useMemo(() => {
     return generateDivisionProblems(
@@ -30,8 +35,20 @@ export function DivisionPage() {
   
   const handleNewSeed = () => {
     const newSeed = Math.floor(Math.random() * 1000000);
-    const newUrl = `${window.location.pathname}?seed=${newSeed}`;
-    window.location.href = newUrl;
+    navigate(`/division?seed=${newSeed}`);
+  };
+  
+  const handleManualSeedSubmit = () => {
+    const newSeed = parseInt(manualSeed, 10);
+    if (!isNaN(newSeed)) {
+      navigate(`/division?seed=${newSeed}`);
+    }
+  };
+  
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleManualSeedSubmit();
+    }
   };
   
   return (
@@ -45,6 +62,25 @@ export function DivisionPage() {
           
           <div className="flex items-center gap-4">
             <span className="text-sm text-gray-600">Seed: {seed}</span>
+            
+            {/* Manual seed input */}
+            <div className="flex items-center gap-2">
+              <input
+                type="number"
+                value={manualSeed}
+                onChange={(e) => setManualSeed(e.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder="Enter seed..."
+                className="px-3 py-1 border border-gray-300 rounded text-sm w-32 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button
+                onClick={handleManualSeedSubmit}
+                className="px-3 py-1 bg-gray-600 text-white rounded text-sm hover:bg-gray-700 transition-colors"
+              >
+                Go
+              </button>
+            </div>
+            
             <button
               onClick={handleNewSeed}
               className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
