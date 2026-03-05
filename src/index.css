@@ -36,6 +36,15 @@ body {
     break-inside: avoid;
   }
   
+  /* Print header styling */
+  .print-only-header {
+    position: running(header);
+    width: 100%;
+    margin-bottom: 0.5cm;
+    border-bottom: 1pt solid #666;
+    padding-bottom: 0.3cm;
+  }
+  
   /* Worksheet layout for print */
   .print-worksheet {
     display: grid !important;
@@ -54,5 +63,8 @@ body {
   @page {
     margin: 1cm;
     size: A4;
+    @top-center {
+      content: element(header);
+    }
   }
 }

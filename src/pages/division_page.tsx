@@ -1,15 +1,22 @@
 import { useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { defaultConfig } from '../config/math_config';
-import { getSeedFromUrl } from '../utils/random_generator';
 import { generateDivisionProblems } from '../utils/division_generator';
 import { DivisionWorksheet } from '../components/division_worksheet';
 
 export function DivisionPage() {
   // Get seed from URL or generate new one
+  const [searchParams] = useSearchParams();
   const seed = useMemo(() => {
-    return getSeedFromUrl();
-  }, []);
+    const seedParam = searchParams.get('seed');
+    if (seedParam) {
+      const seed = parseInt(seedParam, 10);
+      if (!isNaN(seed)) {
+        return seed;
+      }
+    }
+    return 12345;
+  }, [searchParams]);
   
   // Generate problems based on seed
   const problems = useMemo(() => {
@@ -53,6 +60,17 @@ export function DivisionPage() {
           </p>
         </div>
       </nav>
+      
+      {/* Print Header - visible only when printing */}
+      <div className="print-only-header hidden print:block bg-white p-4 border-b-2 border-gray-300 mb-4">
+        <div className="flex justify-between items-center max-w-6xl mx-auto">
+          <h1 className="text-xl font-bold">Schriftliche Division</h1>
+          <div className="text-right">
+            <p className="text-sm font-semibold">Seed: {seed}</p>
+            <p className="text-xs text-gray-600 break-all">{currentUrl}</p>
+          </div>
+        </div>
+      </div>
       
       {/* Worksheet content */}
       <main className="py-8">
