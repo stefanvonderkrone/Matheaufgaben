@@ -16,14 +16,16 @@ export function DivisionMitRestGrid({ dividend, divisor }: DivisionMitRestGridPr
   // Problem starts at row 2, col 1 (dividend)
   const problemRow = 2;
   const dividendStartCol = 1;
-  // Divisor is placed after dividend + 2 columns (for "÷" and space)
+  // Divisor is placed after dividend + 1 column (for "÷")
   const divisorCol = dividendStartCol + dividendLength + 1;
-  // Result area starts after divisor
-  const resultStartCol = divisorCol + 2;
+  // Equals sign after divisor
+  const equalsCol = divisorCol + 1;
+  // Result area starts after equals sign
+  const resultStartCol = equalsCol + 1;
 
   // "P:" goes 8 rows below the problem (row 10), in the divisor column
   const pLabelRow = 10;
-  const pLabelCol = divisorCol;
+  const pLabelCol = equalsCol;
 
   // Generate grid cells
   const generateCells = () => {
@@ -58,14 +60,14 @@ export function DivisionMitRestGrid({ dividend, divisor }: DivisionMitRestGridPr
             const digitIndex = col - dividendStartCol;
             content = dividendStr[digitIndex];
           } else if (col === dividendStartCol + dividendLength) {
-            // Space or separator
-            className += ' bg-gray-50';
+            // Division operator (÷)
+            content = '÷';
           } else if (col === divisorCol) {
             // Divisor
             content = divisor.toString();
-          } else if (col === divisorCol + 1) {
-            // Space
-            className += ' bg-gray-50';
+          } else if (col === equalsCol) {
+            // Equals sign (=)
+            content = '=';
           } else if (col >= resultStartCol && col < resultStartCol + 6) {
             // Empty cells for result (student fills in)
             className += ' bg-white';

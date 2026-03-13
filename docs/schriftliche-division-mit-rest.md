@@ -55,20 +55,22 @@ Das spezielle Raster für jede Aufgabe:
 Zeile 0:  [Ü] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
           ↑ "Ü" in Ecke oben links
 
-Zeile 2:  [ ] [D] [D] [D] [D] [D] [D] [ ] [d] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
-          ↑   ↑   ↑   ↑   ↑   ↑   ↑       ↑
-          │   └── Dividende (4-6 Ziffern)  └── Divisor
+Zeile 2:  [ ] [D] [D] [D] [D] [D] [D] [÷] [d] [=] [ ] [ ] [ ] [ ] [ ] [ ]
+          ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑
+          │   └── Dividende (4-6 Ziffern) │   │   └── Ergebnisbereich
+          │                             │   └── Divisor
+          │                             └── Teilungszeichen (÷)
           └── Start bei Spalte 1
 
 Zeile 10: [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [P:] [ ] [ ] [ ] [ ] [ ] [ ]
-                                      ↑
-                                      └── "P:" 8 Zeilen unter der Aufgabe
+                                          ↑
+                                          └── "P:" unter dem Gleichheitszeichen
 ```
 
 **Positionen:**
 - **"Ü"**: Zeile 0, Spalte 0 (oben links)
-- **Aufgabe**: Zeile 2, Spalte 1 (Dividende) und Spalte danach (Divisor)
-- **"P:"**: Zeile 10, Spalte des Divisors (8 Zeilen unter der Aufgabe)
+- **Aufgabe**: Zeile 2, Spalte 1 (Dividende), gefolgt von ÷, Divisor und =
+- **"P:"**: Zeile 10, Spalte des Gleichheitszeichens (8 Zeilen unter der Aufgabe)
 
 ## Dateien
 
@@ -132,6 +134,13 @@ Tatsächliche Ausgabe mit Rest:
 - Divisor: 7
 - Quotient: 6469
 - Rest: 1
+
+**Grid-Darstellung:**
+```
+Zeile 0:  [Ü] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
+Zeile 2:  [ ] [4] [5] [2] [8] [4] [÷] [7] [=] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
+Zeile 10: [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [P:] [ ] [ ] [ ] [ ] [ ] [ ]
+```
 
 ## Drucken
 
