@@ -57,9 +57,10 @@ Zeile 0:  [Ü] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
 
 Zeile 2:  [ ] [D] [D] [D] [D] [D] [D] [÷] [d] [=] [ ] [ ] [ ] [ ] [ ] [ ]
           ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑
-          │   └── Dividende (4-6 Ziffern) │ │   └── Ergebnisbereich
-          │                             │ └── Divisor
-          │                             └── Teilungszeichen (÷)
+          │   │   │   │   │   │   │   │   │   └── Ergebnisbereich
+          │   │   │   │   │   │   │   │   └── Divisor (d)
+          │   │   │   │   │   │   │   └── Teilungszeichen (÷)
+          │   └───┴───┴───┴───┴───┴───── Dividende (4-6 Ziffern)
           └── Start bei Spalte 1
 
 Zeile 10: [ ] [ ] [ ] [ ] [ ] [ ] [ ] [P:] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
