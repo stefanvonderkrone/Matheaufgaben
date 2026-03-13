@@ -1,6 +1,6 @@
 export interface MathProblem {
   id: string;
-  type: 'division' | 'addition' | 'multiplication';
+  type: 'division' | 'addition' | 'multiplication' | 'divisionWithRemainder';
 }
 
 export interface DivisionProblem extends MathProblem {
@@ -8,6 +8,14 @@ export interface DivisionProblem extends MathProblem {
   dividend: number;
   divisor: number;
   quotient: number;
+}
+
+export interface DivisionWithRemainderProblem extends MathProblem {
+  type: 'divisionWithRemainder';
+  dividend: number;
+  divisor: number;
+  quotient: number;
+  remainder: number;
 }
 
 export interface AdditionProblem extends MathProblem {

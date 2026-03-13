@@ -12,3 +12,11 @@ export const divisionConfig = {
   divisorMin: 2,
   divisorMax: 9,
 };
+
+export const divisionWithRemainderConfig = {
+  dividendMin: 1000,
+  dividendMax: 999999,
+  divisorMin: 2,
+  divisorMax: 9,
+  problemsPerPage: 6,
+};

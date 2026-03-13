@@ -52,8 +52,15 @@ body {
     gap: 0.5cm !important;
     padding: 0 !important;
   }
-  
+
   .print-worksheet-4digit {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5cm !important;
+    padding: 0 !important;
+  }
+
+  .print-worksheet-2col {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 0.5cm !important;
