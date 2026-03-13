@@ -62,9 +62,9 @@ Zeile 2:  [ ] [D] [D] [D] [D] [D] [D] [÷] [d] [=] [ ] [ ] [ ] [ ] [ ] [ ]
           │                             └── Teilungszeichen (÷)
           └── Start bei Spalte 1
 
-Zeile 10: [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [P:] [ ] [ ] [ ] [ ] [ ] [ ]
+Zeile 10: [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [P:] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
                                           ↑
-                                          └── "P:" unter dem Gleichheitszeichen
+                                          └── "P:" unter dem Gleichheitszeichen (=)
 ```
 
 **Positionen:**
@@ -137,9 +137,10 @@ Tatsächliche Ausgabe mit Rest:
 
 **Grid-Darstellung:**
 ```
+Spalten:   0   1   2   3   4   5   6   7   8   9   10  11  12  13  14  15
 Zeile 0:  [Ü] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
 Zeile 2:  [ ] [4] [5] [2] [8] [4] [÷] [7] [=] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
-Zeile 10: [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [P:] [ ] [ ] [ ] [ ] [ ] [ ]
+Zeile 10: [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [P:] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
 ```
 
 ## Drucken
