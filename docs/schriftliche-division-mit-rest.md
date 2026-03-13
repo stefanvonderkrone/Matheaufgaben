@@ -64,13 +64,13 @@ Zeile 2:  [ ] [D] [D] [D] [D] [D] [D] [÷] [d] [=] [ ] [ ] [ ] [ ] [ ] [ ]
 
 Zeile 10: [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [P:] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
                                           ↑
-                                          └── "P:" unter dem Gleichheitszeichen (=)
+                                          └── "P:" unter dem Divisor (8 Zeilen unter der Aufgabe)
 ```
 
 **Positionen:**
 - **"Ü"**: Zeile 0, Spalte 0 (oben links)
 - **Aufgabe**: Zeile 2, Spalte 1 (Dividende), gefolgt von ÷, Divisor und =
-- **"P:"**: Zeile 10, Spalte des Gleichheitszeichens (8 Zeilen unter der Aufgabe)
+- **"P:"**: Zeile 10, Spalte des Divisors (8 Zeilen unter der Aufgabe)
 
 ## Dateien
 
@@ -140,7 +140,7 @@ Tatsächliche Ausgabe mit Rest:
 Spalten:   0   1   2   3   4   5   6   7   8   9   10  11  12  13  14  15
 Zeile 0:  [Ü] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
 Zeile 2:  [ ] [4] [5] [2] [8] [4] [÷] [7] [=] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
-Zeile 10: [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [P:] [ ] [ ] [ ] [ ] [ ] [ ]
+Zeile 10: [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [P:] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
 ```
 
 ## Drucken

@@ -25,7 +25,7 @@ export function DivisionMitRestGrid({ dividend, divisor }: DivisionMitRestGridPr
 
   // "P:" goes 8 rows below the problem (row 10), in the divisor column
   const pLabelRow = 10;
-  const pLabelCol = equalsCol;
+  const pLabelCol = divisorCol;
 
   // Generate grid cells
   const generateCells = () => {
