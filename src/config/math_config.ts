@@ -20,3 +20,11 @@ export const divisionWithRemainderConfig = {
   divisorMax: 9,
   problemsPerPage: 6,
 };
+
+export const multiplicationConfig = {
+  factor1Min: 100,
+  factor1Max: 9999,
+  factor2Min: 2,
+  factor2Max: 9,
+  problemsPerPage: 12,
+};

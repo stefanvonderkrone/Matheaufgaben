@@ -13,6 +13,11 @@ export function IndexPage() {
     return `/schriftliche-division-mit-rest?seed=${seed}`;
   }, []);
 
+  const multiplicationUrl = useMemo(() => {
+    const seed = Math.floor(Math.random() * 1000000);
+    return `/multiplication?seed=${seed}`;
+  }, []);
+
   return (
     <div className="min-h-screen p-8">
       <h1 className="text-3xl font-bold mb-8 text-center">Math Practice Worksheets</h1>
@@ -37,6 +42,15 @@ export function IndexPage() {
             >
               <span className="font-semibold">Schriftliche Division mit Rest</span>
               <span className="text-sm text-gray-600 block">Long Division with Remainder</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={multiplicationUrl}
+              className="block p-4 bg-purple-100 hover:bg-purple-200 rounded-lg transition-colors"
+            >
+              <span className="font-semibold">Schriftliche Multiplikation</span>
+              <span className="text-sm text-gray-600 block">Multiplikation (3-4 stellig × 1 stellig)</span>
             </Link>
           </li>
         </ul>
