@@ -18,6 +18,11 @@ export function IndexPage() {
     return `/multiplication?seed=${seed}`;
   }, []);
 
+  const mixedProblemsUrl = useMemo(() => {
+    const seed = Math.floor(Math.random() * 1000000);
+    return `/sammelaufgaben?seed=${seed}`;
+  }, []);
+
   return (
     <div className="min-h-screen p-8">
       <h1 className="text-3xl font-bold mb-8 text-center">Math Practice Worksheets</h1>
@@ -51,6 +56,15 @@ export function IndexPage() {
             >
               <span className="font-semibold">Schriftliche Multiplikation</span>
               <span className="text-sm text-gray-600 block">Multiplikation (3-4 stellig × 1 stellig)</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={mixedProblemsUrl}
+              className="block p-4 bg-orange-100 hover:bg-orange-200 rounded-lg transition-colors"
+            >
+              <span className="font-semibold">Sammelaufgaben</span>
+              <span className="text-sm text-gray-600 block">Division, Division mit Rest, Multiplikation (je 4 Aufgaben)</span>
             </Link>
           </li>
         </ul>

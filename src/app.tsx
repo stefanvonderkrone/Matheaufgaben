@@ -3,6 +3,7 @@ import { IndexPage } from './pages/index_page';
 import { DivisionPage } from './pages/division_page';
 import { SchriftlicheDivisionMitRestPage } from './pages/schriftliche_division_mit_rest_page';
 import { MultiplicationPage } from './pages/multiplication_page';
+import { MixedProblemsPage } from './pages/mixed_problems_page';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: '/multiplication',
     element: <MultiplicationPage />,
+  },
+  {
+    path: '/sammelaufgaben',
+    element: <MixedProblemsPage />,
   },
 ], {
   basename: '/',
