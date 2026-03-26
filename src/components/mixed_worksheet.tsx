@@ -9,7 +9,7 @@ interface MixedWorksheetProps {
 
 export function MixedWorksheet({ problems }: MixedWorksheetProps) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 p-2 sm:p-4 print-worksheet">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 p-2 sm:p-4 print-worksheet-2col">
       {problems.map((problem) => (
         <div key={problem.id} className="flex overflow-x-auto justify-start print-break-inside-avoid">
           {problem.type === 'division' && (
