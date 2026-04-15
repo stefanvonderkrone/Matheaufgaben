@@ -23,6 +23,11 @@ export function IndexPage() {
     return `/sammelaufgaben?seed=${seed}`;
   }, []);
 
+  const estimateUrl = useMemo(() => {
+    const seed = Math.floor(Math.random() * 1000000);
+    return `/ueberschlag?seed=${seed}`;
+  }, []);
+
   return (
     <div className="min-h-screen p-8">
       <h1 className="text-3xl font-bold mb-8 text-center">Math Practice Worksheets</h1>
@@ -65,6 +70,15 @@ export function IndexPage() {
             >
               <span className="font-semibold">Sammelaufgaben</span>
               <span className="text-sm text-gray-600 block">Division, Division mit Rest, Multiplikation (je 4 Aufgaben)</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={estimateUrl}
+              className="block p-4 bg-teal-100 hover:bg-teal-200 rounded-lg transition-colors"
+            >
+              <span className="font-semibold">Überschlagsaufgaben</span>
+              <span className="text-sm text-gray-600 block">Addition, Subtraktion, Multiplikation mit Überschlag (je 4 Aufgaben)</span>
             </Link>
           </li>
         </ul>

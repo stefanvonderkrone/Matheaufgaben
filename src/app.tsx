@@ -4,6 +4,7 @@ import { DivisionPage } from './pages/division_page';
 import { SchriftlicheDivisionMitRestPage } from './pages/schriftliche_division_mit_rest_page';
 import { MultiplicationPage } from './pages/multiplication_page';
 import { MixedProblemsPage } from './pages/mixed_problems_page';
+import { EstimatePage } from './pages/estimate_page';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: '/sammelaufgaben',
     element: <MixedProblemsPage />,
+  },
+  {
+    path: '/ueberschlag',
+    element: <EstimatePage />,
   },
 ], {
   basename: '/',

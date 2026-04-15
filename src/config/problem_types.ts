@@ -1,6 +1,6 @@
 export interface MathProblem {
   id: string;
-  type: 'division' | 'addition' | 'multiplication' | 'divisionWithRemainder';
+  type: 'division' | 'addition' | 'multiplication' | 'divisionWithRemainder' | 'estimate';
 }
 
 export interface DivisionProblem extends MathProblem {
@@ -30,4 +30,15 @@ export interface MultiplicationProblem extends MathProblem {
   factor1: number;
   factor2: number;
   product: number;
+}
+
+export interface EstimateProblem extends MathProblem {
+  type: 'estimate';
+  operation: 'addition' | 'subtraction' | 'multiplication';
+  operand1: number;
+  operand2: number;
+  rounded1: number;
+  rounded2: number;
+  estimateResult: number;
+  exactResult: number;
 }

@@ -28,3 +28,12 @@ export const multiplicationConfig = {
   factor2Max: 9,
   problemsPerPage: 12,
 };
+
+export const estimateConfig = {
+  minValue: 1000,
+  maxValue: 9999,
+  multiplierMin: 2,
+  multiplierMax: 9,
+  problemsPerPage: 12,
+  problemsPerType: 4, // 4 Addition, 4 Subtraktion, 4 Multiplikation
+};

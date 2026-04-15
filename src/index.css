@@ -66,6 +66,14 @@ body {
     gap: 0.5cm !important;
     padding: 0 !important;
   }
+
+  /* Print layout for estimate worksheet - single column */
+  .print-worksheet-estimate {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.6cm !important;
+    padding: 0 !important;
+  }
   
   @page {
     margin: 1cm;
