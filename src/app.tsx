@@ -5,6 +5,9 @@ import { SchriftlicheDivisionMitRestPage } from './pages/schriftliche_division_m
 import { MultiplicationPage } from './pages/multiplication_page';
 import { MixedProblemsPage } from './pages/mixed_problems_page';
 import { EstimatePage } from './pages/estimate_page';
+import { AdditionSubtractionPage } from './pages/addition_subtraction_page';
+import { NumberLinePage } from './pages/number_line_page';
+import { CalculationRulesPage } from './pages/calculation_rules_page';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +33,18 @@ const router = createBrowserRouter([
   {
     path: '/ueberschlag',
     element: <EstimatePage />,
+  },
+  {
+    path: '/addition-subtraktion-1',
+    element: <AdditionSubtractionPage />,
+  },
+  {
+    path: '/zahlenstrahl-1',
+    element: <NumberLinePage />,
+  },
+  {
+    path: '/rechenregeln-1',
+    element: <CalculationRulesPage />,
   },
 ], {
   basename: '/',

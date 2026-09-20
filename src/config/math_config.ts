@@ -29,6 +29,26 @@ export const multiplicationConfig = {
   problemsPerPage: 12,
 };
 
+export const additionSubtractionConfig = {
+  minValue: 10,
+  maxValue: 999,
+  problemsPerPage: 10,
+};
+
+export const numberLineConfig = {
+  minValue: 1,
+  maxValue: 100,
+  problemsPerPage: 10,
+};
+
+export const calculationRulesConfig = {
+  addendMin: 12,
+  addendMax: 999,
+  factorMin: 2,
+  factorMax: 80,
+  problemsPerPage: 10,
+};
+
 export const estimateConfig = {
   minValue: 1000,
   maxValue: 9999,

@@ -1,89 +1,57 @@
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { gradeCategories } from '../config/grades';
+
+function withRandomSeed(path: string): string {
+  const seed = Math.floor(Math.random() * 1000000);
+  return `${path}?seed=${seed}`;
+}
 
 export function IndexPage() {
-  // Generate random seeds for worksheet links
-  const divisionUrl = useMemo(() => {
-    const seed = Math.floor(Math.random() * 1000000);
-    return `/division?seed=${seed}`;
-  }, []);
-
-  const divisionMitRestUrl = useMemo(() => {
-    const seed = Math.floor(Math.random() * 1000000);
-    return `/schriftliche-division-mit-rest?seed=${seed}`;
-  }, []);
-
-  const multiplicationUrl = useMemo(() => {
-    const seed = Math.floor(Math.random() * 1000000);
-    return `/multiplication?seed=${seed}`;
-  }, []);
-
-  const mixedProblemsUrl = useMemo(() => {
-    const seed = Math.floor(Math.random() * 1000000);
-    return `/sammelaufgaben?seed=${seed}`;
-  }, []);
-
-  const estimateUrl = useMemo(() => {
-    const seed = Math.floor(Math.random() * 1000000);
-    return `/ueberschlag?seed=${seed}`;
-  }, []);
+  const categories = useMemo(
+    () =>
+      gradeCategories.map((category) => ({
+        ...category,
+        worksheets: category.worksheets.map((worksheet) => ({
+          ...worksheet,
+          url: withRandomSeed(worksheet.path),
+        })),
+      })),
+    [],
+  );
 
   return (
     <div className="min-h-screen p-8">
       <h1 className="text-3xl font-bold mb-8 text-center">Math Practice Worksheets</h1>
 
-      <div className="max-w-md mx-auto">
-        <h2 className="text-xl font-semibold mb-4">Available Worksheets:</h2>
+      <div className="max-w-md mx-auto space-y-10">
+        {categories.map((category) => (
+          <section key={category.id}>
+            <h2 className="text-xl font-semibold mb-4">{category.title}</h2>
 
-        <ul className="space-y-2">
-          <li>
-            <Link
-              to={divisionUrl}
-              className="block p-4 bg-blue-100 hover:bg-blue-200 rounded-lg transition-colors"
-            >
-              <span className="font-semibold">Schriftliche Division</span>
-              <span className="text-sm text-gray-600 block">Long Division Practice</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={divisionMitRestUrl}
-              className="block p-4 bg-green-100 hover:bg-green-200 rounded-lg transition-colors"
-            >
-              <span className="font-semibold">Schriftliche Division mit Rest</span>
-              <span className="text-sm text-gray-600 block">Long Division with Remainder</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={multiplicationUrl}
-              className="block p-4 bg-purple-100 hover:bg-purple-200 rounded-lg transition-colors"
-            >
-              <span className="font-semibold">Schriftliche Multiplikation</span>
-              <span className="text-sm text-gray-600 block">Multiplikation (3-4 stellig × 1 stellig)</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={mixedProblemsUrl}
-              className="block p-4 bg-orange-100 hover:bg-orange-200 rounded-lg transition-colors"
-            >
-              <span className="font-semibold">Sammelaufgaben</span>
-              <span className="text-sm text-gray-600 block">Division, Division mit Rest, Multiplikation (je 4 Aufgaben)</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={estimateUrl}
-              className="block p-4 bg-teal-100 hover:bg-teal-200 rounded-lg transition-colors"
-            >
-              <span className="font-semibold">Überschlagsaufgaben</span>
-              <span className="text-sm text-gray-600 block">Addition, Subtraktion, Multiplikation mit Überschlag (je 4 Aufgaben)</span>
-            </Link>
-          </li>
-        </ul>
+            {category.worksheets.length === 0 ? (
+              <p className="text-sm text-gray-500 rounded-lg border border-dashed border-gray-300 p-4">
+                Noch keine Aufgaben in dieser Kategorie.
+              </p>
+            ) : (
+              <ul className="space-y-2">
+                {category.worksheets.map((worksheet) => (
+                  <li key={worksheet.id}>
+                    <Link
+                      to={worksheet.url}
+                      className={`block p-4 rounded-lg transition-colors ${worksheet.colorClass}`}
+                    >
+                      <span className="font-semibold">{worksheet.title}</span>
+                      <span className="text-sm text-gray-600 block">{worksheet.description}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+        ))}
 
-        <p className="mt-8 text-sm text-gray-500">
+        <p className="text-sm text-gray-500">
           Each worksheet gets a unique seed. Add ?seed=123 to the URL to get a specific worksheet.
         </p>
       </div>

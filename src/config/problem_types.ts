@@ -1,6 +1,6 @@
 export interface MathProblem {
   id: string;
-  type: 'division' | 'addition' | 'multiplication' | 'divisionWithRemainder' | 'estimate';
+  type: 'division' | 'addition' | 'multiplication' | 'divisionWithRemainder' | 'estimate' | 'additionSubtraction' | 'numberLine' | 'calculationRules';
 }
 
 export interface DivisionProblem extends MathProblem {
@@ -30,6 +30,26 @@ export interface MultiplicationProblem extends MathProblem {
   factor1: number;
   factor2: number;
   product: number;
+}
+
+export interface AdditionSubtractionProblem extends MathProblem {
+  type: 'additionSubtraction';
+  operation: 'addition' | 'subtraction';
+  operand1: number;
+  operand2: number;
+  result: number;
+}
+
+export interface NumberLineProblem extends MathProblem {
+  type: 'numberLine';
+  start: number;
+  end: number;
+}
+
+export interface CalculationRulesProblem extends MathProblem {
+  type: 'calculationRules';
+  expression: string;
+  result: number;
 }
 
 export interface EstimateProblem extends MathProblem {
