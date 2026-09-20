@@ -1,6 +1,6 @@
 export interface MathProblem {
   id: string;
-  type: 'division' | 'addition' | 'multiplication' | 'divisionWithRemainder' | 'estimate' | 'additionSubtraction' | 'numberLine' | 'calculationRules';
+  type: 'division' | 'addition' | 'multiplication' | 'divisionWithRemainder' | 'estimate' | 'additionSubtraction' | 'numberLine' | 'calculationRules' | 'storyProblem';
 }
 
 export interface DivisionProblem extends MathProblem {
@@ -50,6 +50,12 @@ export interface CalculationRulesProblem extends MathProblem {
   type: 'calculationRules';
   expression: string;
   result: number;
+}
+
+export interface StoryProblem extends MathProblem {
+  type: 'storyProblem';
+  prompt: string;
+  parts: Array<{ label: string; text: string }>;
 }
 
 export interface EstimateProblem extends MathProblem {

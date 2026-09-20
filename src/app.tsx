@@ -8,6 +8,7 @@ import { EstimatePage } from './pages/estimate_page';
 import { AdditionSubtractionPage } from './pages/addition_subtraction_page';
 import { NumberLinePage } from './pages/number_line_page';
 import { CalculationRulesPage } from './pages/calculation_rules_page';
+import { StoryProblemsPage } from './pages/story_problems_page';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
   {
     path: '/rechenregeln-1',
     element: <CalculationRulesPage />,
+  },
+  {
+    path: '/sachaufgaben-1',
+    element: <StoryProblemsPage />,
   },
 ], {
   basename: '/',

@@ -79,6 +79,13 @@ export const gradeCategories: GradeCategory[] = [
         description: '10 Aufgaben: Klammern und Reihenfolge der Rechenoperationen',
         colorClass: 'bg-amber-100 hover:bg-amber-200',
       },
+      {
+        id: 'sachaufgaben-1',
+        path: '/sachaufgaben-1',
+        title: 'Sachaufgaben 1',
+        description: '5 Sachaufgaben: Strecken, Runden und Nährwerte',
+        colorClass: 'bg-rose-100 hover:bg-rose-200',
+      },
     ],
   },
 ];

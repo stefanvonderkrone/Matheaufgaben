@@ -49,6 +49,10 @@ export const calculationRulesConfig = {
   problemsPerPage: 10,
 };
 
+export const storyProblemsConfig = {
+  problemsPerPage: 5,
+};
+
 export const estimateConfig = {
   minValue: 1000,
   maxValue: 9999,
