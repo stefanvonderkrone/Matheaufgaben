@@ -86,6 +86,13 @@ export const gradeCategories: GradeCategory[] = [
         description: '5 Sachaufgaben: Strecken, Runden und Nährwerte',
         colorClass: 'bg-rose-100 hover:bg-rose-200',
       },
+      {
+        id: 'runden-1',
+        path: '/runden-1',
+        title: 'Runden 1',
+        description: 'Runden auf 10er, 100er und 1000er sowie kleinste und größte Ausgangszahl',
+        colorClass: 'bg-indigo-100 hover:bg-indigo-200',
+      },
     ],
   },
 ];

@@ -9,6 +9,7 @@ import { AdditionSubtractionPage } from './pages/addition_subtraction_page';
 import { NumberLinePage } from './pages/number_line_page';
 import { CalculationRulesPage } from './pages/calculation_rules_page';
 import { StoryProblemsPage } from './pages/story_problems_page';
+import { RoundingPage } from './pages/rounding_page';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
   {
     path: '/sachaufgaben-1',
     element: <StoryProblemsPage />,
+  },
+  {
+    path: '/runden-1',
+    element: <RoundingPage />,
   },
 ], {
   basename: '/',

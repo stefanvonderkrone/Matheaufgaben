@@ -1,6 +1,6 @@
 export interface MathProblem {
   id: string;
-  type: 'division' | 'addition' | 'multiplication' | 'divisionWithRemainder' | 'estimate' | 'additionSubtraction' | 'numberLine' | 'calculationRules' | 'storyProblem';
+  type: 'division' | 'addition' | 'multiplication' | 'divisionWithRemainder' | 'estimate' | 'additionSubtraction' | 'numberLine' | 'calculationRules' | 'storyProblem' | 'rounding';
 }
 
 export interface DivisionProblem extends MathProblem {
@@ -57,6 +57,25 @@ export interface StoryProblem extends MathProblem {
   prompt: string;
   parts: Array<{ label: string; text: string }>;
 }
+
+export interface RoundingToPlaceProblem extends MathProblem {
+  type: 'rounding';
+  kind: 'round';
+  place: 10 | 100 | 1000;
+  value: number;
+  result: number;
+}
+
+export interface RoundingRangeProblem extends MathProblem {
+  type: 'rounding';
+  kind: 'range';
+  place: 10 | 100;
+  rounded: number;
+  minExact: number;
+  maxExact: number;
+}
+
+export type RoundingProblem = RoundingToPlaceProblem | RoundingRangeProblem;
 
 export interface EstimateProblem extends MathProblem {
   type: 'estimate';

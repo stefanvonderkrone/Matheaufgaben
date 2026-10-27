@@ -49,6 +49,14 @@ export const calculationRulesConfig = {
   problemsPerPage: 10,
 };
 
+export const roundingConfig = {
+  problemsPerBlock: 10,
+  valueMin: 10,
+  valueMax: 9994,
+  roundedMin: 10,
+  roundedMax: 9990,
+};
+
 export const storyProblemsConfig = {
   problemsPerPage: 5,
 };
