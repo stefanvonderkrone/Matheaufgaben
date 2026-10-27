@@ -61,6 +61,21 @@ export const storyProblemsConfig = {
   problemsPerPage: 5,
 };
 
+export const powersConfig = {
+  productProblemCount: 4,
+  evaluateProblemCount: 10,
+  tenProblemCount: 4,
+  productExponentMin: 2,
+  productExponentMax: 9,
+  evaluateBaseMin: 2,
+  evaluateBaseMax: 30,
+  evaluateExponentMin: 2,
+  evaluateExponentMax: 10,
+  evaluateValueMax: 10000,
+  tenExponentMin: 2,
+  tenExponentMax: 8,
+};
+
 export const estimateConfig = {
   minValue: 1000,
   maxValue: 9999,

@@ -10,6 +10,7 @@ import { NumberLinePage } from './pages/number_line_page';
 import { CalculationRulesPage } from './pages/calculation_rules_page';
 import { StoryProblemsPage } from './pages/story_problems_page';
 import { RoundingPage } from './pages/rounding_page';
+import { PowersPage } from './pages/powers_page';
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
   {
     path: '/runden-1',
     element: <RoundingPage />,
+  },
+  {
+    path: '/potenzen-1',
+    element: <PowersPage />,
   },
 ], {
   basename: '/',

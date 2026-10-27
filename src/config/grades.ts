@@ -93,6 +93,13 @@ export const gradeCategories: GradeCategory[] = [
         description: 'Runden auf 10er, 100er und 1000er sowie kleinste und größte Ausgangszahl',
         colorClass: 'bg-indigo-100 hover:bg-indigo-200',
       },
+      {
+        id: 'potenzen-1',
+        path: '/potenzen-1',
+        title: 'Potenzen 1',
+        description: 'Produkte als Potenz, Potenzen berechnen, Zehnerpotenzen',
+        colorClass: 'bg-cyan-100 hover:bg-cyan-200',
+      },
     ],
   },
 ];
