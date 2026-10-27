@@ -50,9 +50,13 @@ function generateTenProblems(rng: SeededRandom, used: Set<string>): TenPowerProb
 function generateProductProblems(rng: SeededRandom, used: Set<string>): ProductAsPowerProblem[] {
   const ranges: Array<[number, number]> = [
     [1, 9],
+    [1, 9],
+    [10, 99],
+    [10, 99],
     [10, 99],
     [100, 999],
-    [1, 999],
+    [100, 999],
+    [100, 999],
   ];
 
   return shuffle(rng, ranges)

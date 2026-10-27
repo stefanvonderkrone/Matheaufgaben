@@ -62,9 +62,9 @@ export const storyProblemsConfig = {
 };
 
 export const powersConfig = {
-  productProblemCount: 4,
+  productProblemCount: 8,
   evaluateProblemCount: 10,
-  tenProblemCount: 4,
+  tenProblemCount: 8,
   productExponentMin: 2,
   productExponentMax: 9,
   evaluateBaseMin: 2,
@@ -73,7 +73,7 @@ export const powersConfig = {
   evaluateExponentMax: 10,
   evaluateValueMax: 10000,
   tenExponentMin: 2,
-  tenExponentMax: 8,
+  tenExponentMax: 12,
 };
 
 export const estimateConfig = {
